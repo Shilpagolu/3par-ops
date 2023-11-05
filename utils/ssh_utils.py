@@ -11,7 +11,7 @@ class SSHClient:
     def connect(self):
         try:
             self.client.connect(hostname=self.host, username=self.username, password=self.password)
-            print("Connected to the SSH server.")
+            print("Connected to the Storage Array.")
         except paramiko.AuthenticationException:
             print("Authentication failed, please verify your credentials.")
         except paramiko.SSHException as e:
@@ -25,4 +25,4 @@ class SSHClient:
 
     def close(self):
         self.client.close()
-        print("SSH connection closed.")
+        print("SSH connection closed from storage Array.")
